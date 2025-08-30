@@ -6,10 +6,9 @@ from bs4 import BeautifulSoup
 # ----------------------------
 # Load saved model + tokenizer
 # ----------------------------
-save_directory = "./saved_bart_model"  # make sure you saved it before
-tokenizer = BartTokenizer.from_pretrained(save_directory)
-model = BartForConditionalGeneration.from_pretrained(save_directory)
-
+model_name = "facebook/bart-large-cnn"  # or "facebook/bart-base"
+tokenizer = BartTokenizer.from_pretrained(model_name)
+model = BartForConditionalGeneration.from_pretrained(model_name)
 # ----------------------------
 # Summarization function
 # ----------------------------
@@ -116,3 +115,4 @@ if st.button("✨ Generate Summary"):
             st.write(f"**{idx}. {art['title']}**")
     else:
         st.warning("⚠️ Please provide text or fetch an article first.")
+
