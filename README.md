@@ -11,7 +11,6 @@ An interactive Streamlit app that summarizes long-form text from pasted input or
 ## Live app
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://article-summarization-tarunsingh1803.streamlit.app/)
 
-Replace the placeholder https://<your-subdomain>.streamlit.app after deploying on Streamlit Community Cloud.
 
 ## Tech stack
 - **Streamlit** — web UI framework for interactive app building.  
@@ -51,3 +50,4 @@ streamlit run app.py
 
 ## License and attributions
 - Respect licenses for Hugging Face Transformers and the `sshleifer/distilbart-cnn-12-6` model; consult their model card and library documentation for terms.
+
