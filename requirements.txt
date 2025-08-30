@@ -1,0 +1,9 @@
+streamlit
+transformers
+torch
+requests
+beautifulsoup4
+scikit-learn
+rouge-score
+yake
+nltk
