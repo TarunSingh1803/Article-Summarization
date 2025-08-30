@@ -6,9 +6,14 @@ from bs4 import BeautifulSoup
 # ----------------------------
 # Load saved model + tokenizer
 # ----------------------------
-model_name = "facebook/bart-large-cnn"  # or "facebook/bart-base"
-tokenizer = BartTokenizer.from_pretrained(model_name)
-model = BartForConditionalGeneration.from_pretrained(model_name)
+@st.cache_resource
+def load_model():
+    model_name = "sshleifer/distilbart-cnn-12-6"   # smaller + faster
+    tokenizer = BartTokenizer.from_pretrained(model_name)
+    model = BartForConditionalGeneration.from_pretrained(model_name)
+    return tokenizer, model
+
+tokenizer, model = load_model()
 # ----------------------------
 # Summarization function
 # ----------------------------
@@ -115,4 +120,5 @@ if st.button("✨ Generate Summary"):
             st.write(f"**{idx}. {art['title']}**")
     else:
         st.warning("⚠️ Please provide text or fetch an article first.")
+
 
